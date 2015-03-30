@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>js-signals</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>js-signals</name>
     <description>WebJar for js-signals</description>
     <url>http://webjars.org</url>
@@ -50,7 +50,7 @@
         <url>http://github.com/webjars/js-signals</url>
         <connection>scm:git:https://github.com/webjars/js-signals.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/js-signals.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>js-signals-1.0.0</tag>
     </scm>
 
     <build>
@@ -65,11 +65,11 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive"/>
+                                <echo message="download archive" />
                                 <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/js-signals-${upstream.version}/dist" excludes="docs/">
                                     </fileset>
