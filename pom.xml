@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>js-signals</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>js-signals</name>
     <description>WebJar for js-signals</description>
     <url>http://webjars.org</url>
@@ -50,7 +50,7 @@
         <url>http://github.com/webjars/js-signals</url>
         <connection>scm:git:https://github.com/webjars/js-signals.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/js-signals.git</developerConnection>
-        <tag>js-signals-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <build>
