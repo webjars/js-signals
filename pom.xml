@@ -19,8 +19,15 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstream.version>1.0.0</upstream.version>
-        <upstream.url>http://github.com/millermedeiros/js-signals/zipball/master</upstream.url>
+        <upstream.url>https://github.com/millermedeiros/js-signals/archive/v${upstream.version}.zip</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
+        <requirejs>
+            {
+                "paths": {
+                    "signals": "signals"
+                }
+            }
+        </requirejs>
     </properties>
 
     <developers>
@@ -61,12 +68,11 @@
                                 <echo message="download archive"/>
                                 <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
                                 <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}/TEMP"/>
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
                                 <echo message="moving resources"/>
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/TEMP">
+                                    <fileset dir="${project.build.directory}/js-signals-${upstream.version}/dist" excludes="docs/">
                                     </fileset>
-                                    <cutdirsmapper dirs="1" />
                                 </move>
                             </target>
                         </configuration>
